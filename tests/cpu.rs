@@ -4,7 +4,7 @@ mod cpu {
     #[cfg(test)]
     fn test_cpu() {
         
-        use rin::cpu::CpuInfo; 
+        use rin_sys::cpu::CpuInfo; 
         let mut c = CpuInfo::new();
 
         c.fetch();
