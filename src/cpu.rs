@@ -26,22 +26,23 @@ impl CpuInfo {
         let raw_data =
             fs::read_to_string("/proc/cpuinfo").expect("unable to read from cpuinfo file");
 
-        let data: Vec<&str> = raw_data.lines().collect();
+        let mut data = raw_data.lines();
 
-        let vendor_id = parse_str(data[1]).to_string();
-        let model_name = parse_str(data[4]).to_string();
+        let vendor_id = parse_str(data.nth(1).unwrap()).to_string();
+        let model_name = parse_str(data.nth(4).unwrap()).to_string();
 
-        let cpuid_level = parse_str(data[21]).parse::<f32>().unwrap();
-        let cpu_cores = parse_str(data[12]).parse::<usize>().unwrap();
-        let cache_size = parse_str(data[10])
+        let cpuid_level = parse_str(data.nth(10).unwrap()).parse::<f32>().unwrap();
+        let cpu_cores = parse_str(data.nth(12).unwrap()).parse::<usize>().unwrap();
+
+        let cache_size = parse_str(data.nth(8).unwrap())
             .trim_end_matches("KB")
             .trim()
             .parse::<usize>()
             .unwrap();
 
-        let cpu_mhz = parse_str(data[7]).parse::<f32>().unwrap();
+        let cpu_mhz = parse_str(data.nth(8).unwrap()).parse::<f32>().unwrap();
 
-        let is_fpu = if parse_str(data[15]) == "yes" {
+        let is_fpu = if parse_str(data.nth(15).unwrap()) == "yes" {
             true
         } else {
             false

@@ -25,10 +25,10 @@ impl RamInfo {
             String::from_utf8(fs::read("/proc/meminfo").expect("error reading /proc/meminfo"))
                 .expect("error converting system info into String");
 
-        let data: Vec<&str> = rawdata.split("\n").collect();
+        let mut data = rawdata.lines();
 
-        let memtotal = parse_str(data[0], "MemTotal:");
-        let memfree = parse_str(data[1], "MemFree:");
+        let memtotal = parse_str(data.nth(0).unwrap(), "MemTotal:");
+        let memfree = parse_str(data.nth(0).unwrap(), "MemFree:");
 
         self.mem_free = memfree;
         self.mem_total = memtotal;
