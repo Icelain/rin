@@ -5,7 +5,7 @@ A small rust library to fetch system information on linux
 
 # Installation
 
-Add ``` rin-sys = "0.1.0" ``` to your Cargo.toml
+Add ``` rin-sys = "0.1.1" ``` to your Cargo.toml
 
 # Base structs
 
