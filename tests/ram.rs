@@ -4,7 +4,7 @@ mod ram {
     #[cfg(test)]
     fn test_ram() {
 
-        use rin::ram::RamInfo;
+        use rin_sys::ram::RamInfo;
 
         let mut r = RamInfo::new();
         r.fetch();
