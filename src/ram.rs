@@ -21,9 +21,9 @@ pub struct RamInfo {
 
 impl RamInfo {
     pub fn fetch(&mut self) {
-        let rawdata =
-            String::from_utf8(fs::read("/proc/meminfo").expect("error reading /proc/meminfo"))
-                .expect("error converting system info into String");
+
+        let rawdata = fs::read_to_string("/proc/meminfo")
+            .expect("error reading /proc/meminfo");
 
         let mut data = rawdata.lines();
 
