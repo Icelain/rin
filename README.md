@@ -5,7 +5,7 @@ A small rust library to fetch system information on linux
 
 # Installation
 
-Add ``` rin-sys = "0.1.1" ``` to your Cargo.toml
+Add ``` rin-sys = "0.1.2" ``` to your Cargo.toml
 
 # Base structs
 
@@ -26,9 +26,9 @@ pub struct RamInfo {
  ```rust
  #[derive(Debug, Default)]
 pub struct CpuInfo {
-    pub cache_size: usize,
+    pub cache_size: String,
     pub cores: usize,
-    pub cpu_mhz: f32,
+    pub cpu_speed: String,
     pub model_name: String,
     pub vendor_id: String,
     pub is_fpu: bool,
