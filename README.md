@@ -26,9 +26,9 @@ pub struct RamInfo {
  ```rust
  #[derive(Debug, Default)]
 pub struct CpuInfo {
-    pub cache_size: usize,
+    pub cache_size: String,
     pub cores: usize,
-    pub cpu_mhz: f32,
+    pub cpu_speed: String,
     pub model_name: String,
     pub vendor_id: String,
     pub is_fpu: bool,
