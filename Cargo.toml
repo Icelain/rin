@@ -1,8 +1,8 @@
 [package]
 name = "rin-sys"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
-authors = ["icelain <icelain@ctemplar.com>"]
+authors = ["icelain <contact.icelain@gmail.com>"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/icelain/rin"
