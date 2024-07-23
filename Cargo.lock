@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "rin"
-version = "0.1.0"
+name = "rin-sys"
+version = "0.1.2"
