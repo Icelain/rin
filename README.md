@@ -5,11 +5,18 @@ A small rust library to fetch system information on linux
 
 # Installation
 
-Add ``` rin-sys = "0.1.3" ``` to your Cargo.toml
+Add ``` rin-sys = "0.1.4" ``` to your Cargo.toml
 
-# Base structs
+# Usage
 
-RAM info  -
+```rust
+
+let ram_info = rin_sys::get_ram_info();
+let cpu_info = rin_sys::get_cpu_info();
+
+```
+
+RAM info struct -
 
  ```rust
  #[derive(Default, Debug)]
@@ -22,7 +29,7 @@ pub struct RamInfo {
 }
  ```
  
- CPU info - 
+ CPU info struct - 
  ```rust
  #[derive(Debug, Default)]
 pub struct CpuInfo {
